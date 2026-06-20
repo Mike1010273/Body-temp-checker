@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title> Body temp checker</title> 
+    </head>
+  <body>
+    <h1> Body temp checker</h1>
+    <label>Time: </label>
+    <input type="time" id="time"> 
+    <label> Tmerature: </label> 
+    <input type="number" id="temperature" step="0.1">
+    <br>
+    <br>
+    <h3 id="status"></h3>
+    <button onclick="addTemp()"> Check</button>
+    <br>
+    <div id="history"></div>
+    <script>
+  function addTemp(){
+    let time = document.getElementById("time").value;
+    let Temp = document.getElementById("temperature").value;
+    let statusText = "";
+    if(Temp < 36){
+      statusText= "Cold - Low temp"
+  } else if (Temp >= 36 && Temp <= 37.5){
+      statusText = "Normal Temp";
+    } else {
+      statusText= "Fever - High temp";
+    }
+    document.getElementById("status").innerText = statusText;
+  }
+    </script>
+  </body>
+</html>
 
+  
+
+ 
+    
+      
+    
